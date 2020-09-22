@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Ubuntu&display=swap'); */
+
+body {
+    background-color: #F8F8FF;
+    font-family: 'Nunito Sans', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
+}
+
+.container-box {
+    background-color: #fff;
+    width: 100%;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px
+}
+
+.href {
+    color: cornflowerblue;
+    font-weight: bolder;
+    font-size: 14.5px;
+}
+
+.href:hover {
+    color: dodgerblue;
+    font-weight: bolder;
+    font-size: 14.5px;
+    text-decoration: none;
+}
+
+/* .dropdown:hover>.dropdown-menu {
+    display: block;
+} */
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100% !important;
+    z-index: -1;
+}
+
+.megamenu-li {
+    position: static;
+}
+
+.megamenu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 15px;
+}
+
+.megamenu h6 {
+    margin-left: 21px;
+}
+
+.megamenu i {
+    width: 20px;
+}
+
+.myCover {
+    width: 70px;
+}
+
+.table>tbody>tr>* {
+    vertical-align: middle;
+}
