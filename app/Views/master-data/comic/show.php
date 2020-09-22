@@ -4,7 +4,8 @@
 <div class="container mt-4">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-transparent">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/"><i class="fas fa-igloo"></i> Home</a></li>
+            <li class="breadcrumb-item"><a href="#"><i class="fas fa-server"></i> Master Data</a></li>
             <li class="breadcrumb-item"><a href="/comic">Comic</a></li>
             <li class="breadcrumb-item active" aria-current="page">Detail Comic</li>
         </ol>
@@ -18,7 +19,7 @@
             <div class="card mb-3">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img src="/img/<?= $comic['cover'] ?>" class="card-img" alt="comic cover">
+                        <img src="/img/<?= $comic['cover'] ?>" class="card-img shadow" alt="comic cover">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

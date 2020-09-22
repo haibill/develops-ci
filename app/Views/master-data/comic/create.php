@@ -4,7 +4,8 @@
 <div class="container mt-4">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-transparent">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/"><i class="fas fa-igloo"></i> Home</a></li>
+            <li class="breadcrumb-item"><a href="#"><i class="fas fa-server"></i> Master Data</a></li>
             <li class="breadcrumb-item"><a href="/comic">Comic</a></li>
             <li class="breadcrumb-item active" aria-current="page">Create Comic</li>
         </ol>
