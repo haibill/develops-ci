@@ -56,9 +56,9 @@ class Comic extends BaseController
             $cover = 'default.png';
         } else {
             $cover = $fileImage->getRandomName();
+            # move file to folder img
+            $fileImage->move('img', $cover);
         }
-        # move file to folder img
-        $fileImage->move('img', $cover);
 
         $slug = url_title($this->request->getVar('title'), '-', true);
         $this->comicModel->save([
@@ -130,6 +130,13 @@ class Comic extends BaseController
             'detail'    => $this->request->getVar('detail'),
         ]);
         session()->setFlashdata('message', '<strong>OK</strong> Data has been changed successfully!');
+        return redirect()->to('/comic');
+    }
+
+    public function destroy($id)
+    {
+        $this->comicModel->delete($id);
+        session()->setFlashdata('message', '<strong>OK</strong> Data has been deleted successfully!');
         return redirect()->to('/comic');
     }
 
