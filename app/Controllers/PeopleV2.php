@@ -19,7 +19,7 @@ class PeopleV2 extends BaseController
         $data['menu']    = ucwords("master data");
         $data['submenu'] = ucwords("people v2");
         $data['list']    = $this->peopleModel->get();
-        return view('master-data/people/index', $data);
+        return view('master-data/people/index-v2', $data);
     }
 
     public function show($slug)
