@@ -6,9 +6,11 @@ use CodeIgniter\Model;
 
 class ComicModel extends Model
 {
-    protected $table = "comic";
-    protected $useTimestamps = true;
-    protected $allowedFields = ['title', 'slug', 'author', 'publisher', 'cover', 'detail'];
+    protected $table          = "comic";
+    protected $useSoftDeletes = true;
+    protected $useTimestamps  = true;
+    protected $deletedField   = 'deleted_at';
+    protected $allowedFields  = ['title', 'slug', 'author', 'publisher', 'cover', 'detail'];
 
     public function get($slug = false)
     {
