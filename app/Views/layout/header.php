@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $data['title'] ?></title>
+    <!-- Icon -->
+    <link rel="icon" href="<?= base_url('/img.ico') ?>">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('/css/bootstrap.css') ?>">
     <!-- Loader CSS -->

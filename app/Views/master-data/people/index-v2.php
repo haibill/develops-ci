@@ -10,7 +10,7 @@
         </ol>
     </nav>
 </div>
-<div class="container container-box mt-4">
+<div class="container container-box rounded shadow mt-4">
     <div class="row">
         <div class="col-12">
             <div class="row">
@@ -37,8 +37,8 @@
         <div class="col-12">
             <hr>
             <div class="table-responsive">
-                <table class="table table-bordered table-hover dataTables">
-                    <thead class="thead-dark">
+                <table class="table table-bordered table-hover rounded dataTables">
+                    <thead>
                         <tr>
                             <th style="width: 10%;">Action</th>
                             <th>Name</th>
@@ -62,6 +62,13 @@
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
+                    <!-- <tfoot>
+                        <tr>
+                            <th>Action</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                        </tr>
+                    </tfoot> -->
                 </table>
             </div>
         </div>

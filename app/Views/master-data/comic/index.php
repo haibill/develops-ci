@@ -10,7 +10,7 @@
         </ol>
     </nav>
 </div>
-<div class="container container-box mt-4">
+<div class="container container-box rounded shadow mt-4">
     <div class="row">
         <div class="col-12">
             <div class="row">
@@ -37,8 +37,8 @@
         <div class="col-12">
             <hr>
             <div class="table-responsive">
-                <table class="table table-bordered table-hover dataTables">
-                    <thead class="thead-dark">
+                <table class="table table-bordered table-hover rounded dataTables">
+                    <thead>
                         <tr>
                             <th style="width: 10%;">Action</th>
                             <th>Title</th>
@@ -52,7 +52,7 @@
                                     <a href="/comic/edit/<?= $item['slug'] ?>" class="btn btn-sm btn-outline-warning" data-toggle="tooltip" title="Edit Comic">
                                         <i class="far fa-edit"></i>
                                     </a>
-                                    &nbsp;
+                                    |
                                     <form action="/comic/<?= $item['id'] ?>" method="post" class="d-inline">
                                         <?= csrf_field() ?>
                                         <input type="hidden" name="_method" value="DELETE">

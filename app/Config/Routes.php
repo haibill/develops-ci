@@ -38,6 +38,11 @@ $routes->delete('/comic/(:num)', 'comic::destroy/$1');
 $routes->get('/comic/edit/(:segment)', 'comic::edit/$1');
 $routes->get('/comic/(:any)', 'comic::show/$1');
 
+// $routes->get('/supplier/create', 'supplier::create');
+// $routes->delete('/supplier/(:num)', 'supplier::destroy/$1');
+// $routes->get('/supplier/edit/(:segment)', 'supplier::edit/$1');
+// $routes->get('/supplier/(:any)', 'supplier::show/$1');
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing

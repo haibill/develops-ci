@@ -10,7 +10,7 @@
         </ol>
     </nav>
 </div>
-<div class="container container-box mt-4">
+<div class="container container-box rounded shadow mt-4">
     <div class="row">
         <div class="col-12">
             <div class="row">
@@ -47,8 +47,8 @@
                 </form>
             </div>
             <div class="table-responsive">
-                <table class="table table-bordered table-hover">
-                    <thead class="thead-dark">
+                <table class="table table-bordered table-hover rounded">
+                    <thead>
                         <tr>
                             <th style="width: 10%;">Action</th>
                             <th>Name</th>

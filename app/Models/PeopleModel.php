@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class peopleModel extends Model
+class PeopleModel extends Model
 {
     protected $table = "people";
     protected $useTimestamps = true;
