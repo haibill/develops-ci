@@ -10,12 +10,14 @@ class Customer extends BaseController
 {
     protected $customerModel;
     protected $customerData;
+    public $validation;
 
     public function __construct()
     {
         $this->request       = Services::request();
         $this->customerModel = new CustomerModel();
         $this->customerData  = new CustomerDatatable($this->request);
+        $this->validation    = \Config\Services::validation();
     }
 
     public function index()
@@ -77,7 +79,6 @@ class Customer extends BaseController
     public function store()
     {
         if ($this->request->isAJAX()) {
-            $validation = \Config\Services::validation();
             $valid = $this->validate([
                 'customer_code' => [
                     'label' => ucwords('customer code'),
@@ -100,10 +101,10 @@ class Customer extends BaseController
             if (!$valid) {
                 $message = [
                     'error' => [
-                        'customer_code' => $validation->getError('customer_code'),
-                        'name'          => $validation->getError('name'),
-                        'phone_number'  => $validation->getError('phone_number'),
-                        'address'       => $validation->getError('address')
+                        'customer_code' => $this->validation->getError('customer_code'),
+                        'name'          => $this->validation->getError('name'),
+                        'phone_number'  => $this->validation->getError('phone_number'),
+                        'address'       => $this->validation->getError('address')
                     ]
                 ];
             } else {
@@ -113,7 +114,7 @@ class Customer extends BaseController
                     'phone_number'  => $this->request->getVar('phone_number'),
                     'address'       => $this->request->getVar('address')
                 ]);
-                $message['success'] = 'Data added successfully!';
+                $message['success'] = '<b>OK !</b>&nbsp;&nbsp;Data added successfully.';
             }
             echo json_encode($message);
         } else {
@@ -138,17 +139,49 @@ class Customer extends BaseController
             $name          = $this->request->getVar('name');
             $phone_number  = $this->request->getVar('phone_number');
             $address       = $this->request->getVar('address');
+            $count         = count($customer_code);
 
-            $count = count($customer_code);
             for ($i = 0; $i < $count; $i++) {
-                $this->customerModel->save([
-                    'customer_code' => $customer_code[$i],
-                    'name'          => $name[$i],
-                    'phone_number'  => $phone_number[$i],
-                    'address'       => $address[$i]
+                $valid = $this->validate([
+                    'customer_code[$i]' => [
+                        'label' => ucwords('customer code'),
+                        'rules' => 'required'
+                    ],
+                    'name[$i]'  => [
+                        'label' => ucwords('name'),
+                        'rules' => 'required'
+                    ],
+                    'phone_number[$i]'   => [
+                        'label' => ucwords('phone number'),
+                        'rules' => 'required'
+                    ],
+                    'address[$i]'   => [
+                        'label' => ucwords('address'),
+                        'rules' => 'required'
+                    ]
                 ]);
             }
-            $message['success'] = "<b>OK !</b>&nbsp;&nbsp; $count Data added successfully.";
+
+            if (!$valid) {
+                $message = [
+                    'error' => [
+                        'customer_code' => $this->alidation->getError('customer_code'),
+                        'name'          => $this->validation->getError('name'),
+                        'phone_number'  => $this->validation->getError('phone_number'),
+                        'address'       => $this->validation->getError('address')
+                    ]
+                ];
+            } else {
+                for ($i = 0; $i < $count; $i++) {
+                    $this->customerModel->save([
+                        'customer_code' => $customer_code[$i],
+                        'name'          => $name[$i],
+                        'phone_number'  => $phone_number[$i],
+                        'address'       => $address[$i]
+                    ]);
+                }
+                $message['success'] = "<b>OK !</b>&nbsp;&nbsp; $count Data added successfully.";
+            }
             echo json_encode($message);
         } else {
             exit('Sorry.. we cannot proccess your request');
@@ -178,7 +211,6 @@ class Customer extends BaseController
     public function update()
     {
         if ($this->request->isAJAX()) {
-            $validation = \Config\Services::validation();
             $valid = $this->validate([
                 'customer_code' => [
                     'label' => ucwords('customer code'),
@@ -201,10 +233,10 @@ class Customer extends BaseController
             if (!$valid) {
                 $message = [
                     'error' => [
-                        'customer_code' => $validation->getError('customer_code'),
-                        'name'          => $validation->getError('name'),
-                        'phone_number'  => $validation->getError('phone_number'),
-                        'address'       => $validation->getError('address')
+                        'customer_code' => $this->validation->getError('customer_code'),
+                        'name'          => $this->validation->getError('name'),
+                        'phone_number'  => $this->validation->getError('phone_number'),
+                        'address'       => $this->validation->getError('address')
                     ]
                 ];
             } else {
@@ -248,7 +280,7 @@ class Customer extends BaseController
         if ($this->request->isAJAX()) {
             $customer_id = $this->request->getVar('customer_id');
             $this->customerModel->delete($customer_id);
-            $message['success'] = 'Data removed successfully!';
+            $message['success'] = '<b>OK !</b>&nbsp;&nbsp;Data removed successfully!';
             echo json_encode($message);
         } else {
             exit('Sorry.. we cannot proccess your request');
