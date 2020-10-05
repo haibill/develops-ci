@@ -25,4 +25,7 @@
         </tr>
     </tfoot>
 </table>
-<?= $this->include('master-data/customer/ajax-update-delete') ?>
+<?php
+echo $this->include('master-data/customer/ajax/function-update');
+echo $this->include('master-data/customer/ajax/function-datatable');
+?>

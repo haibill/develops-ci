@@ -34,7 +34,7 @@
                     $('.view-modal').html(response.data).show()
                     $('#formModal').modal('show')
                     $('#formModalLabel').html('Form Add Customer')
-                    $('.customer-form').attr('action', '/customer/store')
+                    $('.customer-form').attr('action', 'customer/store')
                 },
                 error: function(xhr, ajaxOptions, thrownError) {
                     alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError)

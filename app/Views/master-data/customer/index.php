@@ -23,7 +23,7 @@
                             Action
                         </button>
                         <div class="dropdown-menu dropdown-content" aria-labelledby="btnGroupDrop1">
-                            <a class="dropdown-item" href="#">Add</a>
+                            <a class="dropdown-item modal-add" href="#">Add</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item multiple-insert-button" href="#">Multiple Add</a>
                             <div class="dropdown-divider"></div>
@@ -55,5 +55,10 @@
 <div class="view-modal" style="display: none;"></div>
 <div id="notification-success" style="display: none;"></div>
 <div id="notification-failed" style="display: none;"></div>
-<?= $this->include('master-data/customer/ajax-create-read') ?>
-<?= $this->endSection() ?>
+<?php
+echo $this->include('master-data/customer/ajax/function-read');
+echo $this->include('master-data/customer/ajax/function-create');
+echo $this->include('master-data/customer/ajax/function-delete');
+echo $this->include('master-data/customer/ajax/function-multiple-insert');
+echo $this->endSection();
+?>

@@ -14,17 +14,17 @@
                     <input type="hidden" id="customer_id" name="customer_id" class="form-control" readonly>
                     <div class="form-group">
                         <label class="font-weight-bold">Customer Code <span style="color: tomato;">*</span></label>
-                        <input type="text" class="form-control" id="customer_code" name="customer_code" placeholder="ex: SUP">
+                        <input type="text" class="form-control" id="customer_code" name="customer_code" placeholder="ex: CTR" autocomplete="off">
                         <div class="invalid-feedback error-customer-code"></div>
                     </div>
                     <div class="form-group">
                         <label class="font-weight-bold">Name <span style="color: tomato;">*</span></label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="ex: Niaga Jaya">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="ex: Niaga Jaya" autocomplete="off">
                         <div class="invalid-feedback error-name"></div>
                     </div>
                     <div class="form-group">
                         <label class="font-weight-bold">Phone Number <span style="color: tomato;">*</span></label>
-                        <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="ex: 087830661966">
+                        <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="ex: 087830661966" autocomplete="off">
                         <div class="invalid-feedback error-phone-number"></div>
                     </div>
                     <div class="form-group">
@@ -40,4 +40,4 @@
         </div>
     </div>
 </div>
-<?= $this->include('master-data/customer/ajax') ?>
+<?= $this->include('master-data/customer/ajax/function-create') ?>
